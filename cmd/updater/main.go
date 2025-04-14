@@ -5,7 +5,6 @@ import (
 	"os"
 	"net/http"
 	"fmt"
-	"time"
 	"github.com/joho/godotenv"
 	"github.com/slack-go/slack"
 )
@@ -75,9 +74,7 @@ func main() {
 				Operation: "replace",
 				DocumentContent: slack.DocumentContent{
 					Type: "markdown",
-					Markdown: fmt.Sprintf(`<!date^%d^{ago}|a>
-
-![%s](%s)`, time.Now().Unix(), fileSummary.ID, fileInfo.Permalink),
+					Markdown: fmt.Sprintf(`![%s](%s)`, fileSummary.ID, fileInfo.Permalink),
 				},
 			},
 		},
