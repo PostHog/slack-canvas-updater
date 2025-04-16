@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"github.com/joho/godotenv"
 	"github.com/slack-go/slack"
-	"time"
 )
 
 func main() {
@@ -75,8 +74,7 @@ func main() {
 				Operation: "replace",
 				DocumentContent: slack.DocumentContent{
 					Type: "markdown",
-					Markdown: fmt.Sprintf(`Updated at: %s
-![%s](%s)`, time.Now().UTC().Format("15:04:05"), fileSummary.ID, fileInfo.Permalink),
+					Markdown: fmt.Sprintf(`![%s](%s)`, fileSummary.ID, fileInfo.Permalink),
 				},
 			},
 		},
