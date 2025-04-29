@@ -1,12 +1,12 @@
 package main
 
 import (
-	"log"
-	"os"
-	"net/http"
 	"fmt"
 	"github.com/joho/godotenv"
 	"github.com/slack-go/slack"
+	"log"
+	"net/http"
+	"os"
 )
 
 func main() {
@@ -74,7 +74,11 @@ func main() {
 				Operation: "replace",
 				DocumentContent: slack.DocumentContent{
 					Type: "markdown",
-					Markdown: fmt.Sprintf(`![%s](%s)`, fileSummary.ID, fileInfo.Permalink),
+					Markdown: fmt.Sprintf(`
+---
+![%s](%s)
+---
+`, fileSummary.ID, fileInfo.Permalink),
 				},
 			},
 		},
