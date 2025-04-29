@@ -75,7 +75,8 @@ func main() {
 				DocumentContent: slack.DocumentContent{
 					Type: "markdown",
 					Markdown: fmt.Sprintf(`
----
+### Overview
+
 ![%s](%s)
 
 ---
