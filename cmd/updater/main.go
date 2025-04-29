@@ -77,6 +77,7 @@ func main() {
 					Markdown: fmt.Sprintf(`
 ---
 ![%s](%s)
+
 ---
 `, fileSummary.ID, fileInfo.Permalink),
 				},
