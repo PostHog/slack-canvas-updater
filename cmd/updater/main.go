@@ -78,7 +78,7 @@ func main() {
 ---
 ![%s](%s)
 
----
+
 `, fileSummary.ID, fileInfo.Permalink),
 				},
 			},
