@@ -15,6 +15,7 @@ func main() {
 	imageUrl := os.Getenv("IMAGE_URL")
 	imageAuthToken := os.Getenv("IMAGE_AUTH_TOKEN")
 	canvasId := os.Getenv("SLACK_CANVAS_ID")
+	canvasSectionId := os.Getenv("SLACK_CANVAS_SECTION_ID")
 	slackToken := os.Getenv("SLACK_TOKEN")
 
 	if imageUrl == "" {
@@ -72,6 +73,7 @@ func main() {
 		Changes: []slack.CanvasChange{
 			{
 				Operation: "replace",
+				SectionID: canvasSectionId,  // ok if this is empty string, will replace the entire canvas
 				DocumentContent: slack.DocumentContent{
 					Type: "markdown",
 					Markdown: fmt.Sprintf(`
